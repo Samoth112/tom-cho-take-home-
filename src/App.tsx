@@ -14,6 +14,12 @@ function App(): React.ReactElement {
             <img className="img img--centered" src="https://i.imgur.com/HVih4Qp.png"></img>
             {/* make this a router to hold the static, edit, and error views */}
             <section className="overlay">
+              <div className="edit-link">
+                <p>
+                  <img src="https://i.imgur.com/XkVcQW2.png"></img>
+                  Edit
+                </p>
+              </div>
               <p className="date">
                 11-20-2018
               </p>
@@ -30,8 +36,44 @@ function App(): React.ReactElement {
               </Router>
             </section>
           </section>
-          <section className="article">
-
+          <section className="article main-grid__sub-grid">
+            <p className="text">
+              Lyra Energy Services LLC (“Lyra”) has developed a new generation liquid hydrogen sulfide (H2S) scavenger (“Vega”). 
+              Lyra has developed the Vega scavenger to overcome several shortcomings of conventional liquid scavengers such as triazine. 
+              Through extensive laboratory testing in collaboration with Gas Technology Institute (“GTI”), Vega has proven superior to 
+              conventional non-regenerative liquid scavengers such as triazine, offering a significant increase in capacity at a reduced cost.
+            </p>
+            <p className="text">
+              Additionally, Vega eliminates foaming and solid formation associated with triazine use, minimizing operational challenges. 
+            </p>
+            <p className="text">
+              Vega utilizes and expands chemistry that is well understood in the gas sweetening processes and uses relatively inexpensive, 
+              readily available, safe and established chemicals to ensure effective removal of H2S while reducing operating costs. In this chemistry, 
+              H2S sulfur is oxidized to a higher oxidation state, namely S(0), with no or minimal solid formation.
+            </p>
+            <div className="quote">
+              <p className="text">
+                GTI has conducted extensive head-to-head laboratory testing of the Vega scavenger versus triazine. In the contact tower setting, Vega 
+                demonstrated significant benefits over triazine:
+              </p>
+            </div>
+            <p className="byline">
+                - Ronald McDonald
+            </p>
+            <p className="text">
+              Lyra Energy Services LLC (“Lyra”) has developed a new generation liquid hydrogen sulfide (H2S) scavenger (“Vega”). 
+              Lyra has developed the Vega scavenger to overcome several shortcomings of conventional liquid scavengers such as triazine. 
+              Through extensive laboratory testing in collaboration with Gas Technology Institute (“GTI”), Vega has proven superior to 
+              conventional non-regenerative liquid scavengers such as triazine, offering a significant increase in capacity at a reduced cost.
+            </p>
+            <p className="text">
+              Additionally, Vega eliminates foaming and solid formation associated with triazine use, minimizing operational challenges. 
+            </p>
+            <p className="text">
+              Vega utilizes and expands chemistry that is well understood in the gas sweetening processes and uses relatively inexpensive, 
+              readily available, safe and established chemicals to ensure effective removal of H2S while reducing operating costs. In this chemistry, 
+              H2S sulfur is oxidized to a higher oxidation state, namely S(0), with no or minimal solid formation.
+            </p>
           </section>
         </div>
       </Route>
