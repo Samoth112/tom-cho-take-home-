@@ -14,9 +14,15 @@ function App(): React.ReactElement {
             <img className="img img--centered" src="https://i.imgur.com/HVih4Qp.png"></img>
             {/* make this a router to hold the static, edit, and error views */}
             <section className="overlay">
+              <p className="date">
+                11-20-2018
+              </p>
               <Router>
                 <Route exact path="/articles/:id">
-
+                  <p className="title">
+                    {/* 400 is the heaviest weight available */}
+                    Guidelines For Inkjet Cartridge Refill
+                  </p>
                 </Route>
                 <Route path="/articles/:id/edit">
 

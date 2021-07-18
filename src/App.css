@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .main-grid, .main-grid__sub-grid {
   display: grid;
   grid-template-columns: repeat(8, 2.77778% minmax(0, 1fr)) 2.77778%;
   grid-template-rows: max-content minmax(0,1fr);  
-  margin: 0;
   position: relative;
 }
 
@@ -34,10 +40,46 @@
 
 .overlay {
   background-color: white;
+  font-family: "PT Mono";
   grid-column: 4 / 14;
   grid-row: 2 / 3;
   height: 12.5rem;
+  position: relative;
+  /* since I am not using positioning to place the overlay, I am using transform to recreate the extra 1px of height in the figma file */
+  transform: translateY(1px);
   z-index: 1;
+}
+
+.date {
+  --date-height: 14px;
+  color: #8E8E8E;
+  font-family: "PT Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  height: var(--date-height);
+  left: 1.03%;
+  line-height: 14px;
+  position: absolute;
+  /* I prefer to use a variable here to hold the height to make it */
+  /* immediately apparent that top is based on the date element's height */
+  top: calc(50% - var(--date-height)/2);
+  /* -29px come from half the width of the date, 72px, minus half the height of the tile, 14px */
+  /* since positioning of a rotated element acts as if it wasn't rotated, the title element must move */
+  /* to the left, 29px: 36px to the left, then 7px back to the right */
+  /* this is because elements are rotated about their center, which is halfway from the left and halfway from the top of the element */
+  transform: rotate(-90deg) translateY(-29px);
+}
+
+.title {
+  bottom: 2rem;
+  color: #2C2C2C;
+  font-size: 2.625rem;
+  left: 4.6875rem;
+  line-height: 58px;
+  right: 4.6875rem;
+  top: 3.25rem;
+  position: absolute;
 }
 
 .article {
