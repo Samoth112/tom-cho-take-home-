@@ -1,7 +1,46 @@
-.main-grid {
+.main-grid, .main-grid__sub-grid {
   display: grid;
   grid-template-columns: repeat(8, 2.77778% minmax(0, 1fr)) 2.77778%;
   grid-template-rows: max-content minmax(0,1fr);  
   margin: 0;
   position: relative;
+}
+
+.hero {
+  /* prefer to use -1 for the last grid line since it does not require knowing how many columns there are*/
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  /* give height to container, not the image */
+  height: 33.75rem;
+  overflow: clip;
+  position: relative;
+}
+
+/* use higher specificity to override .main-grid__sub-grid to customize the "sub-grid" */
+.hero.main-grid__sub-grid {
+  grid-template-rows: minmax(0, 1fr) max-content;
+}
+
+.hero img {
+  z-index: 0;
+}
+
+.img--centered {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.overlay {
+  background-color: white;
+  grid-column: 4 / 14;
+  grid-row: 2 / 3;
+  height: 12.5rem;
+  z-index: 1;
+}
+
+.article {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
 }
