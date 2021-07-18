@@ -6,6 +6,7 @@ function App(): React.ReactElement {
     <div className="main-grid">
       <section className="hero main-grid__sub-grid">
         <img className="img img--centered" src="https://i.imgur.com/HVih4Qp.png"></img>
+        {/* make this a router to hold the static, edit, and error views */}
         <section className="overlay">
 
         </section>
