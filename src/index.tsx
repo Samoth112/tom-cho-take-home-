@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {loadState} from './localStorage';
 import reportWebVitals from './reportWebVitals';
+
+const persistedState = loadState();
+
+// document.title = persistedState.pageTitle;
 
 ReactDOM.render(
   <React.StrictMode>
