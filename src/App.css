@@ -138,3 +138,65 @@
   line-height: 14px;
   padding: 16px 75px 32px 75px;;
 }
+
+.side-meta {
+  display: grid;
+  grid-column: 1 / 4;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(2, max-content); 
+  height: 74px;
+  padding: 64px 0 0 0;
+}
+
+.author {
+  border-bottom: 1px solid #E2E2E2;
+  grid-column: 1 / -1;
+  height: 28px;
+  position: relative;
+}
+
+.author-label, .share-label {
+  color: #AEAEAE;
+  font-family: "PT Mono";
+  font-size: 10px;
+  height: 14px;
+  left: 40px;
+  line-height: 14px;
+  position: absolute;
+}
+
+.author-name {
+  color: #1F1F1F;
+  font-family: "PT Mono";
+  font-size: 12px;
+  height: 14px;
+  line-height: 14px;
+  position: absolute;
+  right: 0;
+}
+
+.share {
+  border-bottom: 1px solid #E2E2E2;
+  grid-column: 1 / -1;
+  height: 45px;
+  position: relative;
+}
+
+.share .share-label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.social-icons {
+  list-style: none;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 0;
+}
+
+.social-icons li {
+  display: inline;
+  padding: 6px;
+}
+

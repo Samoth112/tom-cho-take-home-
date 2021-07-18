@@ -37,6 +37,26 @@ function App(): React.ReactElement {
             </section>
           </section>
           <section className="article main-grid__sub-grid">
+            <div className="side-meta">
+              <div className="author">
+                <p className="author-label">
+                  Author
+                </p>
+                <p className="author-name">
+                  Art Vandalay
+                </p>
+              </div>
+              <div className="share">
+                <p className="share-label">
+                  Share
+                </p>
+                <ul className="social-icons">
+                  <li><img src="https://i.imgur.com/KQbHWUj.png"></img></li>
+                  <li><img src="https://i.imgur.com/c58NdaG.png"></img></li>
+                  <li><img src="https://i.imgur.com/a5J1AiX.png"></img></li>
+                </ul>
+              </div>
+            </div>
             <p className="text">
               Lyra Energy Services LLC (“Lyra”) has developed a new generation liquid hydrogen sulfide (H2S) scavenger (“Vega”). 
               Lyra has developed the Vega scavenger to overcome several shortcomings of conventional liquid scavengers such as triazine. 
