@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import Title from './Title';
 import EditForm from './EditForm';
 import './App.css';
 
@@ -24,25 +25,20 @@ function App(): React.ReactElement {
                     Edit
                   </p>
                 </a>
-                <p className="title">
-                  {/* 400 is the heaviest weight available */}
-                  Guidelines For Inkjet Cartridge Refill
-                </p>
+                <Title />
               </Route>
               <Route path="/articles/:id/edit">
                 <ul className="edit-nav">
                   <li>
                     <a href="/">
-                      <button className="cancel-link">Cancel</button>
+                      <p className="cancel-link">Cancel</p>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
-                      <input className="submit" type="submit" form="edit-form" value="Save" />
-                    </a>
+                    <input className="submit" type="submit" form="edit-form" value="Save" />
                   </li>
                 </ul>
-                <EditForm />
+                <EditForm /> 
               </Route>
           </section>
         </section>

@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const persistedState = loadState();
 const persistedTitle = persistedState ? persistedState.pageTitle : "Guidelines For Inkjet Cartridge Refill"; 
 saveState({pageTitle: persistedTitle, tempTitle: persistedTitle})
-// document.title = persistedState.pageTitle;
+document.title = persistedTitle;
 
 window.addEventListener("beforeunload", function(e) {
   const textBox = document.getElementById("textarea") as HTMLTextAreaElement;
@@ -18,8 +18,10 @@ window.addEventListener("beforeunload", function(e) {
 document.addEventListener("keyup", function(e) {
   e.preventDefault();
   const slug = document.getElementById("slug") as HTMLParagraphElement;
-  slug.style.display = "block"
-})
+  if(slug) {
+    slug.style.display = "block"
+  };
+});
 
 ReactDOM.render(
   <React.StrictMode>
