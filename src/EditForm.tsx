@@ -23,6 +23,23 @@ export default function EditForm(): React.ReactElement {
   }
 
   useEffect(() => {
+    // I added this eventListener to listen for page reloads, so that when a user refreshes the page for any reason while editing the title
+    // but before hitting save, the current title, and not the slug, will reappear in the form input.
+    window.addEventListener("beforeunload", function(e) {
+      // At this point on initial render, textArea will be null, since nothing has been rendered yet
+      const textArea = document.getElementById("textarea") as HTMLTextAreaElement;
+      if(textArea) {
+        textArea.value = persistedState.pageTitle;
+      };
+    })
+
+    document.addEventListener("keyup", function(e) {
+      e.preventDefault();
+      const slug = document.getElementById("slug") as HTMLParagraphElement;
+      if(slug) {
+        slug.style.display = "block"
+      };
+    });
     const cancelLink = document.getElementsByClassName("submit")[0] as HTMLInputElement;
     if(tempTitle.length === 0) {
       cancelLink.style.background = "#9B9B9B";
@@ -36,7 +53,6 @@ export default function EditForm(): React.ReactElement {
   })
 
   if(redirect) {
-    console.log(redirect)
     return(
       <Redirect to="/" />
     )

@@ -3,11 +3,21 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+
 import Title from './Title';
 import EditForm from './EditForm';
+import {saveState, loadState} from './localStorage';
 import './App.css';
 
 function App(): React.ReactElement {
+  // Normally, I would use a back end to hold article data, like the title, and would not need to initial data like this in index.tsx
+  // On initial render, persistedState will always be undefined, since state has not yet ever been saved to localStorage.
+  const persistedState = loadState();
+  // persistedTitle is initialized to "Guidelines for Inkjet Cartridge Refill."
+  const persistedTitle = persistedState ? persistedState.pageTitle : "Guidelines For Inkjet Cartridge Refill"; 
+  saveState({pageTitle: persistedTitle, tempTitle: persistedTitle})
+  document.title = persistedTitle;
+
   return (
     <Router>
       <div className="main-grid">
