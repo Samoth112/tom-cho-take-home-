@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {loadState} from './localStorage';
+import {saveState, loadState} from './localStorage';
 import reportWebVitals from './reportWebVitals';
 
 const persistedState = loadState();
-
+const persistedTitle = persistedState ? persistedState.pageTitle : "Guidelines For Inkjet Cartridge Refill"; 
+saveState({pageTitle: persistedTitle, tempTitle: persistedTitle})
 // document.title = persistedState.pageTitle;
+
+window.addEventListener("beforeunload", function(e) {
+  const textBox = document.getElementById("textarea") as HTMLTextAreaElement;
+  textBox.value = persistedTitle;
+})
+
+document.addEventListener("keyup", function(e) {
+  e.preventDefault();
+  const slug = document.getElementById("slug") as HTMLParagraphElement;
+  slug.style.display = "block"
+})
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Mono&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .main-grid, .main-grid__sub-grid {
@@ -10,6 +15,10 @@
   grid-template-columns: repeat(8, 2.77778% minmax(0, 1fr)) 2.77778%;
   grid-template-rows: max-content minmax(0,1fr);  
   position: relative;
+}
+
+.main-grid__sub-grid {
+  grid-template-rows: minmax(0, 1fr) max-content;
 }
 
 .hero {
@@ -20,11 +29,6 @@
   height: 33.75rem;
   overflow: clip;
   position: relative;
-}
-
-/* use higher specificity to override .main-grid__sub-grid to customize the "sub-grid" */
-.hero.main-grid__sub-grid {
-  grid-template-rows: minmax(0, 1fr) max-content;
 }
 
 .hero img {
@@ -50,26 +54,69 @@
   z-index: 1;
 }
 
+.edit-link, .cancel-link, .submit {
+  border: 0;
+  display: inline-block;
+  font-family: "PT Mono";
+  height: 38px;
+  padding: 12px 15px;
+}
+
 .edit-link {
   background: #F8CF1C;
-  display: block;
-  height: 38px;
+  font-size: 14px;
+  line-height: 1em;
+  text-align: center;
+  transform: translateY(-100%) translateY(-1px);
   position: absolute;
   right: 0;
-  transform: translateY(-100%) translateY(-1px);
-  width: 87px;
 }
+
+.cancel-link {
+  background: #FF7F5B;
+  color: white;
+  font-size: 14px;
+  line-height: 1em;
+  text-align: center;
+  transform: translateX(-1.5px) translateY(-1.5px);
+ }
+
+ .submit {
+  background: #5FCC9C;
+  color: white;
+  font-size: 14px;
+  line-height: 1em;
+  transform: translateY(-1.5px);
+ }
 
 .edit-link img {
   padding-right: 8px;
 }
 
-.edit-link p {
-  left: 50%;
-  display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.edit-form {
+  bottom: 30px;
+  left: 75px;
+  position: absolute;
+  top: 34px;
+  right: 80px;
+}
+
+.edit-form textarea {
+  background: #FCF8F8;
+  border: 1px solid #E2E2E2;
+  border-radius: 2px;
+  font-size: 32px;
+  height: 100%;
+  line-height: 43px;
+  padding: 10px 10px 0 10px;
+  resize: none;
+  width: 100%;
+}
+
+#slug {
+  display: none;
+  font-size: 11px;
+  padding-top: 10px;
 }
 
 .date {
@@ -189,10 +236,10 @@
 
 .social-icons {
   list-style: none;
-  top: 50%;
-  transform: translateY(-50%);
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .social-icons li {
@@ -200,3 +247,13 @@
   padding: 6px;
 }
 
+.edit-nav {
+  list-style: none;
+  position: absolute;
+  transform: translateY(-100%);
+  right: 0;
+}
+
+.edit-nav li {
+  display: inline;
+}

@@ -1,5 +1,6 @@
 interface PersistedState {
- pageTitle: string;
+  tempTitle: string;
+  pageTitle: string;
 }
 
 export const saveState = (state: PersistedState) => {

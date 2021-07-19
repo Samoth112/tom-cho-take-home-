@@ -3,40 +3,50 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import EditForm from './EditForm';
 import './App.css';
 
 function App(): React.ReactElement {
   return (
     <Router>
-      <Route exact path="/articles/:id">
-        <div className="main-grid">
-          <section className="hero main-grid__sub-grid">
-            <img className="img img--centered" src="https://i.imgur.com/HVih4Qp.png"></img>
-            {/* make this a router to hold the static, edit, and error views */}
-            <section className="overlay">
-              <div className="edit-link">
-                <p>
-                  <img src="https://i.imgur.com/XkVcQW2.png"></img>
-                  Edit
-                </p>
-              </div>
-              <p className="date">
-                11-20-2018
-              </p>
-              <Router>
-                <Route exact path="/articles/:id">
-                  <p className="title">
-                    {/* 400 is the heaviest weight available */}
-                    Guidelines For Inkjet Cartridge Refill
+      <div className="main-grid">
+        <section className="hero main-grid__sub-grid">
+          <img className="img img--centered" src="https://i.imgur.com/HVih4Qp.png" alt="the Golden Gate Bridge from the shore"></img>
+          {/* make this a router to hold the static, edit, and error views */}
+          <section className="overlay">
+            <p className="date">
+              11-20-2018
+            </p>
+              <Route exact path="/">
+                <a href="/articles/1/edit">
+                  <p className="edit-link">
+                    <img src="https://i.imgur.com/XkVcQW2.png" alt=""></img>
+                    Edit
                   </p>
-                </Route>
-                <Route path="/articles/:id/edit">
-
-                </Route>
-              </Router>
-            </section>
+                </a>
+                <p className="title">
+                  {/* 400 is the heaviest weight available */}
+                  Guidelines For Inkjet Cartridge Refill
+                </p>
+              </Route>
+              <Route path="/articles/:id/edit">
+                <ul className="edit-nav">
+                  <li>
+                    <a href="/">
+                      <button className="cancel-link">Cancel</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <input className="submit" type="submit" form="edit-form" value="Save" />
+                    </a>
+                  </li>
+                </ul>
+                <EditForm />
+              </Route>
           </section>
-          <section className="article main-grid__sub-grid">
+        </section>
+        <section className="article main-grid__sub-grid">
             <div className="side-meta">
               <div className="author">
                 <p className="author-label">
@@ -51,9 +61,9 @@ function App(): React.ReactElement {
                   Share
                 </p>
                 <ul className="social-icons">
-                  <li><img src="https://i.imgur.com/KQbHWUj.png"></img></li>
-                  <li><img src="https://i.imgur.com/c58NdaG.png"></img></li>
-                  <li><img src="https://i.imgur.com/a5J1AiX.png"></img></li>
+                  <li><img src="https://i.imgur.com/KQbHWUj.png" alt=""></img></li>
+                  <li><img src="https://i.imgur.com/c58NdaG.png" alt=""></img></li>
+                  <li><img src="https://i.imgur.com/a5J1AiX.png" alt=""></img></li>
                 </ul>
               </div>
             </div>
@@ -95,8 +105,7 @@ function App(): React.ReactElement {
               H2S sulfur is oxidized to a higher oxidation state, namely S(0), with no or minimal solid formation.
             </p>
           </section>
-        </div>
-      </Route>
+      </div>
     </Router>
   );
 }
