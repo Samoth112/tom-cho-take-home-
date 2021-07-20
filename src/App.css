@@ -17,6 +17,7 @@ a {
   position: relative;
 }
 
+/* use this pattern to override main-grid */
 .main-grid__sub-grid {
   grid-template-rows: minmax(0, 1fr) max-content;
 }
@@ -131,7 +132,7 @@ a {
   line-height: 14px;
   position: absolute;
   /* I prefer to use a variable here to hold the height to make it */
-  /* immediately apparent that top is based on the date element's height */
+  /* immediately apparent that top property is based on the date element's height */
   top: calc(50% - var(--date-height)/2);
   /* -29px come from half the width of the date, 72px, minus half the height of the tile, 14px */
   /* since positioning of a rotated element acts as if it wasn't rotated, the title element must move */
