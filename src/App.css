@@ -27,7 +27,7 @@ a {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   /* give height to container, not the image */
-  height: 33.75rem;
+  height: 540px;
   overflow: clip;
   position: relative;
 }
@@ -48,7 +48,7 @@ a {
   font-family: "PT Mono";
   grid-column: 4 / 14;
   grid-row: 2 / 3;
-  height: 12.5rem;
+  height: 210px;
   position: relative;
   /* since I am not using positioning to place the overlay, I am using transform to recreate the extra 1px of height in the figma file */
   transform: translateY(1px);
@@ -142,13 +142,13 @@ a {
 }
 
 .title {
-  bottom: 2rem;
+  bottom: 32px;
   color: #2C2C2C;
-  font-size: 2.625rem;
-  left: 4.6875rem;
+  font-size: 42px;
+  left: 75px;
   line-height: 58px;
-  right: 4.6875rem;
-  top: 3.25rem;
+  right: 75px;
+  top: 52px;
   position: absolute;
 }
 
@@ -180,7 +180,7 @@ a {
 .byline {
   color: #B5B5B5;
   font-family: "PT Mono";
-  font-size: .75rem;
+  font-size: 12px;
   grid-column: 4 / 14;
   height: 14px;
   line-height: 14px;
