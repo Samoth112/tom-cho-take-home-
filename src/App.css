@@ -48,7 +48,7 @@ a {
   font-family: "PT Mono";
   grid-column: 4 / 14;
   grid-row: 2 / 3;
-  height: 210px;
+  height: 201px;
   position: relative;
   /* since I am not using positioning to place the overlay, I am using transform to recreate the extra 1px of height in the figma file */
   transform: translateY(1px);
